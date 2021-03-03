@@ -22,15 +22,15 @@ input.addEventListener("input", () => {
     phraseCharArray.forEach((characterSpan, index) => {
         const character = inputCharArray[index]
         if (character == null) {
-            characterSpan.classList.remove("incorrect")
-            characterSpan.classList.remove("correct")
+            characterSpan.classList.remove("text-danger")
+            characterSpan.classList.remove("text-success")
             typedCorrect = false
         } else if (character === characterSpan.innerText) {
-            characterSpan.classList.add("correct")
-            characterSpan.classList.remove("incorrect")
+            characterSpan.classList.add("text-success")
+            characterSpan.classList.remove("text-danger")
         } else {
-            characterSpan.classList.add("incorrect")
-            characterSpan.classList.remove("correct")
+            characterSpan.classList.add("text-danger")
+            characterSpan.classList.remove("text-success")
             typedCorrect = false
         }
     })
