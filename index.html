@@ -28,10 +28,7 @@
 
     <main class="container text-center mt-5">
         <!-- input -->
-        <h2>
-            Hi {{ user.first_name }}!<br>
-            Type the phrase below within <span id="time-limit"></span> seconds
-        </h2>
+        <h2>Type the phrase below within <span id="time-limit"></span> seconds</h2>
         <h3 class="mt-5 mx-auto" id="phrase"></h3>
         <textarea class="form-control-lg" id="input" cols="50" rows="5"
         placeholder="start typing..." autofocus></textarea>
@@ -42,13 +39,15 @@
             <div class="col"><h3>Time Left: <span id="time-left"></span> seconds</h3></div>
             <div class="col"><h3>Score: <span id="score"></span></h3></div>
         </div>
-        <h3 class="mt-5">High Score: <span id="high-score">{{ user.highest_score }}</span></h3>
 
+        <button class="btn btn-primary" id="new-game">New Game</button>
+
+        <h3 class="mt-5">High Score: <span id="high-score"></span></h3>
+        
         <!-- instructions -->
         <p class="instructions bg-secondary mx-auto p-3 mt-5 rounded-3">
             Instructions:<br>
-            Type the given phrase before time runs out to move on to the next phrase<br>
-            To play again, type the current phrase.
+            Type the given phrase before time runs out to move on to the next phrase
         </p>
     </main>
 
