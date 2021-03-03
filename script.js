@@ -1,6 +1,6 @@
-// all ids to manipulate:
+// ids to manipulate:
 // time-limit
-// word
+// phrase
 // message
 // time-left
 // score
