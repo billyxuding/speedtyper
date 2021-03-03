@@ -1,6 +1,3 @@
-// TODO:
-// refactor to jQuery
-
 $(document).ready(function() {
     const randomQuotesURL = "http://api.quotable.io/random"
     const phrase = document.getElementById("phrase")
@@ -38,6 +35,7 @@ $(document).ready(function() {
         }
     })
 
+    document.getElementById("new-game").onclick = function() {location.reload()}
 
     
     function getRandomQuote() {
@@ -68,6 +66,4 @@ $(document).ready(function() {
     }
 
     getNextQuote()
-
-    document.getElementById("new-game").onclick = function() {location.reload()}
 })
