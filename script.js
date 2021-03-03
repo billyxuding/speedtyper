@@ -6,7 +6,7 @@
 // score
 // high-score
 
-var randomQuotesURL = "http://api.quotable.io/random";
+var randomQuotesURL = "http://api.quotable.io/random"
 
 function getRandomQuote() {
     return fetch(randomQuotesURL)
@@ -16,7 +16,7 @@ function getRandomQuote() {
 
 async function getNextQuote() {
     var quote = await getRandomQuote()
-    console.log(quote)
+    document.getElementById("phrase").innerText = quote
 }
 
 getNextQuote()
