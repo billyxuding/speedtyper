@@ -1,5 +1,5 @@
 // TODO:
-// add countdown timer from 60 or any number
+// add countdown timer from 60
 // display a Game Over message when the countdown hits 0
 // refactor to jQuery
 
@@ -58,6 +58,7 @@ $(document).ready(function() {
             phrase.appendChild(characterSpan)
         })
         input.value = null
+        // restart the timer
     }
     
     getNextQuote()
