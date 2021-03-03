@@ -30,7 +30,7 @@
         <!-- input -->
         <h2>
             Hi {{ user.first_name }}!<br>
-            Type the phrase below within <span id="time-limit">10</span> seconds
+            Type the phrase below within <span id="time-limit"></span> seconds
         </h2>
         <h3 class="mt-5 mx-auto" id="phrase"></h3>
         <textarea class="form-control-lg" id="input" cols="50" rows="5"
@@ -39,7 +39,7 @@
 
         <!-- timer and score -->
         <div class="row mt-3">
-            <div class="col"><h3>Time Left: <span id="time-left">10</span> seconds</h3></div>
+            <div class="col"><h3>Time Left: <span id="time-left"></span> seconds</h3></div>
             <div class="col"><h3>Score: <span id="score"></span></h3></div>
         </div>
         <h3 class="mt-5">High Score: <span id="high-score">{{ user.highest_score }}</span></h3>
