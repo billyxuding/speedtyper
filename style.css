@@ -1,3 +1,7 @@
 * {
     outline: 1px dotted pink;
 }
+
+.form-control {
+    width: 500px;
+}
