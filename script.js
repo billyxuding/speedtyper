@@ -5,11 +5,11 @@ $(document).ready(function() {
     const randomQuotesURL = "http://api.quotable.io/random"
     const phrase = document.getElementById("phrase")
     const input = document.getElementById("input")
-    document.getElementById("score").innerText = 0
-    document.getElementById("time-limit").innerText = 60
-    document.getElementById("time-left").innerText = 60
     let score = 0
     let secondsRemaining = 60
+    document.getElementById("score").innerText = score
+    document.getElementById("time-limit").innerText = secondsRemaining
+    document.getElementById("time-left").innerText = secondsRemaining
     
     input.addEventListener("input", () => {
         console.log("changed")
