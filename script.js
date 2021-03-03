@@ -1,19 +1,15 @@
 // TODO:
-// add countdown timer from 60
-// display a Game Over message when the countdown hits 0
 // refactor to jQuery
-
-// ids to manipulate:
-// time-limit
-// message
-// time-left
 
 $(document).ready(function() {
     const randomQuotesURL = "http://api.quotable.io/random"
     const phrase = document.getElementById("phrase")
     const input = document.getElementById("input")
     document.getElementById("score").innerText = 0
+    document.getElementById("time-limit").innerText = 60
+    document.getElementById("time-left").innerText = 60
     let score = 0
+    let time = 60
     
     input.addEventListener("input", () => {
         console.log("changed")
@@ -58,8 +54,18 @@ $(document).ready(function() {
             phrase.appendChild(characterSpan)
         })
         input.value = null
-        // restart the timer
+        // start the timer
+        setInterval(countdown, 1000)
     }
-    
+
+    function countdown() {
+        if (time > 0) {
+            time--
+        } else {
+            document.getElementById("message").innerText = "Time's Up!"
+        }
+        document.getElementById("time-left").innerText = time
+    }
+
     getNextQuote()
 })
