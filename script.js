@@ -9,6 +9,10 @@ const randomQuotesURL = "http://api.quotable.io/random"
 const phrase = document.getElementById("phrase")
 const input = document.getElementById("input")
 
+input.addEventListener("input", () => {
+    console.log("changed")
+})
+
 function getRandomQuote() {
     return fetch(randomQuotesURL)
         .then(response => response.json())
