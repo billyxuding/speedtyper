@@ -1,6 +1,5 @@
 // ids to manipulate:
 // time-limit
-// phrase
 // message
 // time-left
 // score
@@ -8,6 +7,7 @@
 
 const randomQuotesURL = "http://api.quotable.io/random"
 const phrase = document.getElementById("phrase")
+const input = document.getElementById("input")
 
 function getRandomQuote() {
     return fetch(randomQuotesURL)
@@ -23,6 +23,7 @@ async function getNextQuote() {
         characterSpan.innerText = character
         phrase.appendChild(characterSpan)
     })
+    input.value = null
 }
 
 getNextQuote()
