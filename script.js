@@ -15,19 +15,26 @@ input.addEventListener("input", () => {
     console.log("changed")
     const phraseCharArray = phrase.querySelectorAll("span")
     const inputCharArray = input.value.split("")
+
+    let typedCorrect = true
     phraseCharArray.forEach((characterSpan, index) => {
         const character = inputCharArray[index]
         if (character == null) {
             characterSpan.classList.remove("incorrect")
             characterSpan.classList.remove("correct")
+            typedCorrect = false
         } else if (character === characterSpan.innerText) {
             characterSpan.classList.add("correct")
             characterSpan.classList.remove("incorrect")
         } else {
             characterSpan.classList.add("incorrect")
             characterSpan.classList.remove("correct")
+            typedCorrect = false
         }
     })
+    if (typedCorrect) {
+        getNextQuote()
+    }
 })
 
 function getRandomQuote() {
