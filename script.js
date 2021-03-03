@@ -9,7 +9,7 @@ $(document).ready(function() {
     document.getElementById("time-limit").innerText = 60
     document.getElementById("time-left").innerText = 60
     let score = 0
-    let time = 60
+    let secondsRemaining = 60
     
     input.addEventListener("input", () => {
         console.log("changed")
@@ -59,12 +59,12 @@ $(document).ready(function() {
     }
 
     function countdown() {
-        if (time > 0) {
-            time--
+        if (secondsRemaining > 0) {
+            secondsRemaining--
         } else {
             document.getElementById("message").innerText = "Time's Up!"
         }
-        document.getElementById("time-left").innerText = time
+        document.getElementById("time-left").innerText = secondsRemaining
     }
 
     getNextQuote()
