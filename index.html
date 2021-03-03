@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--Bootstrap CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-    rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-    crossorigin="anonymous">
-
-    <!--CSS in folder-->
-    <link rel="stylesheet" href="style.css">
-
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+        crossorigin="anonymous">
+        
+        <!-- external CSS file -->
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- external JavaScript file -->
+        <script src="script.js" defer></script>
     <title>Speed Typer</title>
 </head>
 <body class="bg-dark text-white">
@@ -22,7 +24,7 @@
     </header>
 
     <main class="container text-center mt-5">
-        <!--input-->
+        <!-- input -->
         <h2>
             Hi {{ user.first_name }}!<br>
             Type the phrase below within <span id="time-limit">10</span> seconds
@@ -32,14 +34,14 @@
         placeholder="start typing..." autofocus></textarea>
         <h3 id="message"></h3>
 
-        <!--score-->
+        <!-- score -->
         <div class="row mt-3">
             <div class="col"><h3>Time Left: <span id="time-left">10</span> seconds</h3></div>
             <div class="col"><h3>Score: <span id="score"></span></h3></div>
         </div>
         <h3 class="mt-5">High Score: <span id="high-score">{{ user.highest_score }}</span></h3>
 
-        <!--instructions-->
+        <!-- instructions -->
         <p class="instructions bg-secondary mx-auto p-3 mt-5 rounded-3">
             Instructions:<br>
             Type the given phrase before time runs out to move on to the next phrase<br>
@@ -47,6 +49,5 @@
         </p>
     </main>
 
-    <script src="script.js"></script>
 </body>
 </html>
