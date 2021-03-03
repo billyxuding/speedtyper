@@ -1,4 +1,7 @@
-// TODO: refactor to jQuery
+// TODO:
+// add countdown timer from 10 or any number
+// display a Game Over message when the countdown hits 0
+// refactor to jQuery
 
 // ids to manipulate:
 // time-limit
