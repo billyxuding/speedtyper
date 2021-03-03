@@ -1,3 +1,5 @@
+// TODO: refactor to jQuery
+
 // ids to manipulate:
 // time-limit
 // message
