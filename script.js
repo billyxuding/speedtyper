@@ -19,6 +19,9 @@ input.addEventListener("input", () => {
         const character = inputCharArray[index]
         if (character === characterSpan.innerText) {
             characterSpan.classList.add("correct")
+            characterSpan.classList.remove("incorrect")
+        } else {
+            characterSpan.classList.add("incorrect")
         }
     })
 })
