@@ -7,7 +7,7 @@ $(document).ready(function() {
     document.getElementById("score").innerText = score
     document.getElementById("time-limit").innerText = secondsRemaining
     document.getElementById("time-left").innerText = secondsRemaining
-    
+
     input.addEventListener("input", () => {
         console.log("changed")
         const phraseCharArray = phrase.querySelectorAll("span")
@@ -39,13 +39,12 @@ $(document).ready(function() {
 
     document.getElementById("new-game").onclick = function() {location.reload()}
 
-    
     function getRandomQuote() {
         return fetch(randomQuotesURL)
             .then(response => response.json())
             .then(data => data.content)
     }
-    
+
     async function getNextQuote() {
         const quote = await getRandomQuote()
         phrase.innerHTML = ""
@@ -62,7 +61,7 @@ $(document).ready(function() {
         if (secondsRemaining > 0) {
             secondsRemaining--
         } else {
-            document.getElementById("message").innerText = "Time's Up!"
+            document.getElementById("times-up").innerText = "Time's Up!"
         }
         document.getElementById("time-left").innerText = secondsRemaining
     }
