@@ -29,9 +29,11 @@ $(document).ready(function() {
             }
         })
         if (typedCorrect) {
-            score++
-            document.getElementById("score").innerText = score
-            getNextQuote()
+            if (secondsRemaining > 0) {
+                score++
+                document.getElementById("score").innerText = score
+                getNextQuote()
+            }
         }
     })
 
