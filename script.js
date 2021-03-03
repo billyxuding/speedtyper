@@ -10,6 +10,8 @@
 const randomQuotesURL = "http://api.quotable.io/random"
 const phrase = document.getElementById("phrase")
 const input = document.getElementById("input")
+document.getElementById("score").innerText = 0
+let score = 0
 
 input.addEventListener("input", () => {
     console.log("changed")
@@ -33,6 +35,8 @@ input.addEventListener("input", () => {
         }
     })
     if (typedCorrect) {
+        score++
+        document.getElementById("score").innerText = score
         getNextQuote()
     }
 })
