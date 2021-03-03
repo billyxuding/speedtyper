@@ -13,6 +13,14 @@ const input = document.getElementById("input")
 
 input.addEventListener("input", () => {
     console.log("changed")
+    const phraseCharArray = phrase.querySelectorAll("span")
+    const inputCharArray = input.value.split("")
+    phraseCharArray.forEach((characterSpan, index) => {
+        const character = inputCharArray[index]
+        if (character === characterSpan.innerText) {
+            characterSpan.classList.add("correct")
+        }
+    })
 })
 
 function getRandomQuote() {
