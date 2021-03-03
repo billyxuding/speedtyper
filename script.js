@@ -1,5 +1,5 @@
 // TODO:
-// add countdown timer from 10 or any number
+// add countdown timer from 60 or any number
 // display a Game Over message when the countdown hits 0
 // refactor to jQuery
 
@@ -7,8 +7,6 @@
 // time-limit
 // message
 // time-left
-// score
-// high-score
 
 $(document).ready(function() {
     const randomQuotesURL = "http://api.quotable.io/random"
