@@ -17,11 +17,15 @@ input.addEventListener("input", () => {
     const inputCharArray = input.value.split("")
     phraseCharArray.forEach((characterSpan, index) => {
         const character = inputCharArray[index]
-        if (character === characterSpan.innerText) {
+        if (character == null) {
+            characterSpan.classList.remove("incorrect")
+            characterSpan.classList.remove("correct")
+        } else if (character === characterSpan.innerText) {
             characterSpan.classList.add("correct")
             characterSpan.classList.remove("incorrect")
         } else {
             characterSpan.classList.add("incorrect")
+            characterSpan.classList.remove("correct")
         }
     })
 })
