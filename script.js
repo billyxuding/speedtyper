@@ -15,7 +15,6 @@ $(document).ready(function() {
         console.log("changed")
         const phraseCharArray = phrase.querySelectorAll("span")
         const inputCharArray = input.value.split("")
-    
         let typedCorrect = true
         phraseCharArray.forEach((characterSpan, index) => {
             const character = inputCharArray[index]
@@ -38,6 +37,8 @@ $(document).ready(function() {
             getNextQuote()
         }
     })
+
+
     
     function getRandomQuote() {
         return fetch(randomQuotesURL)
@@ -54,7 +55,6 @@ $(document).ready(function() {
             phrase.appendChild(characterSpan)
         })
         input.value = null
-        // start the timer
         setInterval(countdown, 1000)
     }
 
@@ -68,4 +68,6 @@ $(document).ready(function() {
     }
 
     getNextQuote()
+
+    document.getElementById("new-game").onclick = function() {location.reload()}
 })
