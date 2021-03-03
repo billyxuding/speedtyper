@@ -10,6 +10,7 @@
     rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
     crossorigin="anonymous">
 
+    <!--CSS in folder-->
     <link rel="stylesheet" href="style.css">
 
     <title>Speed Typer</title>
@@ -25,10 +26,15 @@
         <h2>car</h2>
         <input class="form-control form-control-lg mx-auto" type="text" placeholder="start typing..." autofocus>
         <div class="row mt-3">
-            <div class="col"><h3>Time Left: 0 seconds</h3></div>
+            <div class="col-6"><h3>Time Left: 0 seconds</h3></div>
+            <div class="col"><h3>Score: 0</h3></div>
             <div class="col"><h3>High Score: 0</h3></div>
         </div>
-        <p class="instructions bg-secondary mx-auto mt-5">Intructions blah blah blah</p>
+        <p class="instructions bg-secondary mx-auto mt-5">
+            Instructions:<br>
+            Type the given word before time runs out to move on to the next word<br>
+            To play again, type the current word.
+        </p>
     </main>
 
     <script src="script.js"></script>
