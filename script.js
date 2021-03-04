@@ -8,7 +8,8 @@ $(function() {
     $("#score").text(score)
     // document.getElementById("time-limit").innerText = timeLimit
     $("#time-limit").text(timeLimit)
-    document.getElementById("time-left").innerText = timeLimit
+    // document.getElementById("time-left").innerText = timeLimit
+    $("#time-left").text(timeLimit)
 
     input.addEventListener("input", () => {
         const phraseCharArray = phrase.querySelectorAll("span")
