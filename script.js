@@ -14,15 +14,15 @@ $(function() {
         phraseCharArray.forEach((characterSpan, index) => {
             const character = inputCharArray[index]
             if (character == null) {
-                characterSpan.classList.remove("text-danger")
-                characterSpan.classList.remove("text-success")
+                $(characterSpan).removeClass("text-danger")
+                $(characterSpan).removeClass("text-success")
                 typedCorrect = false
-            } else if (character === characterSpan.innerText) {
-                characterSpan.classList.add("text-success")
-                characterSpan.classList.remove("text-danger")
+            } else if (character === $(characterSpan).text()) {
+                $(characterSpan).addClass("text-success")
+                $(characterSpan).removeClass("text-danger")
             } else {
-                characterSpan.classList.add("text-danger")
-                characterSpan.classList.remove("text-success")
+                $(characterSpan).addClass("text-danger")
+                $(characterSpan).removeClass("text-success")
                 typedCorrect = false
             }
         })
