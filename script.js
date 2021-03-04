@@ -18,7 +18,8 @@ $(function() {
         quote.split("").forEach(character => {
             const characterSpan = document.createElement("span")
             $(characterSpan).text(character)
-            phrase.appendChild(characterSpan)
+            // phrase.appendChild(characterSpan)
+            $(phrase).append(characterSpan)
         })
         input.value = null
         $("#score").text(score)
