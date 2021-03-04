@@ -24,14 +24,15 @@
     </header>
 
     <main class="container mt-5">
-        <!-- phrase and input -->
+        <!-- phrase to type -->
         <h2>Type the phrase below within <span id="time-limit"></span> seconds</h2>
-
         <h3 class="mt-5 w-50 mx-auto" id="phrase"></h3>
+
+        <!-- input box -->
         <textarea class="w-50" id="input" rows="3" placeholder="start typing..." autofocus></textarea>
-        <h3 class="text-danger mt-3" id="game-over"></h3>
 
         <!-- timer and score -->
+        <h3 class="text-danger mt-3" id="game-over"></h3>
         <div class="row mt-3">
             <div class="col"><h3>Time Left: <span id="time-left"></span> seconds</h3></div>
             <div class="col"><h3>Score: <span id="score"></span></h3></div>
@@ -44,7 +45,7 @@
         <p class="w-50 mx-auto bg-secondary p-3 mt-5 rounded-3">
             Instructions:<br>
             Type the given phrase before time runs out to move on to the next phrase<br>
-            Click the New Game button to restart the timer
+            Click the New Game button to play again
         </p>
     </main>
 
