@@ -6,7 +6,7 @@ $(function() {
     $("#score").text(score)
     $("#time-limit").text(secondsRemaining)
     $("#time-left").text(secondsRemaining)
-
+    
     input.addEventListener("input", () => {
         const phraseCharArray = phrase.querySelectorAll("span")
         const inputCharArray = input.value.split("")
@@ -29,14 +29,20 @@ $(function() {
         if (typedCorrect) {
             if (secondsRemaining > 0) {
                 score++
-                document.getElementById("score").innerText = score
+                $("#score").text(score)
                 secondsRemaining = 21
                 getNextQuote()
             }
         }
     })
 
-    document.getElementById("new-game").onclick = function() {location.reload()}
+    $("#new-game").click(function() {
+        $("#game-over").text("")
+        score = 0
+        $("#score").text(score)
+        getNextQuote()
+        secondsRemaining = 21
+    })
 
     function getRandomQuote() {
         return fetch("http://api.quotable.io/random")
