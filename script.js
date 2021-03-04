@@ -12,14 +12,13 @@ $(function() {
     }
 
     // grabs the quote and displays it
-    // makes each character its own span
     async function getNextQuote() {
         const quote = await getRandomQuote()
+        const arrayOfCharacters = quote.split("")
         $("#phrase").html(null)
-        // refactor below to jquery
-        quote.split("").forEach(character => {
+        $(arrayOfCharacters).each(function(index) { // makes each character its own span
             const characterSpan = document.createElement("span")
-            $(characterSpan).text(character)
+            $(characterSpan).text(arrayOfCharacters[index])
             $("#phrase").append(characterSpan)
         })
         $("#input").val(null)
