@@ -1,6 +1,6 @@
 $(function() {
     let secondsRemaining = 20
-    $("#time-limit").text(secondsRemaining)
+    $(".time-limit").text(secondsRemaining)
     $("#time-left").text(secondsRemaining)
     let score = 0
     const phrase = document.getElementById("phrase")
