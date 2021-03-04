@@ -2,11 +2,10 @@ $(function() {
     const phrase = document.getElementById("phrase")
     const input = document.getElementById("input")
     let score = 0
-    let timeLimit = 20
-    let secondsRemaining = timeLimit
+    let secondsRemaining = 20
     $("#score").text(score)
-    $("#time-limit").text(timeLimit)
-    $("#time-left").text(timeLimit)
+    $("#time-limit").text(secondsRemaining)
+    $("#time-left").text(secondsRemaining)
 
     input.addEventListener("input", () => {
         const phraseCharArray = phrase.querySelectorAll("span")
@@ -31,7 +30,7 @@ $(function() {
             if (secondsRemaining > 0) {
                 score++
                 document.getElementById("score").innerText = score
-                secondsRemaining = timeLimit + 1
+                secondsRemaining = 21
                 getNextQuote()
             }
         }
