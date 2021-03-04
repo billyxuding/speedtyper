@@ -3,7 +3,6 @@ $(function() {
     const input = document.getElementById("input")
     let score = 0
     let secondsRemaining = 20
-    $("#score").text(score)
     $("#time-limit").text(secondsRemaining)
     $("#time-left").text(secondsRemaining)
     
@@ -28,21 +27,19 @@ $(function() {
         })
         if (typedCorrect) {
             if (secondsRemaining > 0) {
-                score++
-                $("#score").text(score)
                 secondsRemaining = 21
+                score++
                 getNextQuote()
             }
         }
     })
 
     $("#new-game").click(function() {
+        secondsRemaining = 21
+        score = 0
         getNextQuote()
         $("#input").focus()
         $("#game-over").text(null)
-        secondsRemaining = 21
-        score = 0
-        $("#score").text(score)
     })
 
     function getRandomQuote() {
@@ -60,6 +57,7 @@ $(function() {
             phrase.appendChild(characterSpan)
         })
         input.value = null
+        $("#score").text(score)
     }
     
     function countdown() {
