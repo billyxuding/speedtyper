@@ -6,7 +6,8 @@ $(function() {
     let secondsRemaining = timeLimit
     // document.getElementById("score").innerText = score
     $("#score").text(score)
-    document.getElementById("time-limit").innerText = timeLimit
+    // document.getElementById("time-limit").innerText = timeLimit
+    $("#time-limit").text(timeLimit)
     document.getElementById("time-left").innerText = timeLimit
 
     input.addEventListener("input", () => {
