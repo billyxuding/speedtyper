@@ -3,10 +3,11 @@ $(document).ready(function() {
     const phrase = document.getElementById("phrase")
     const input = document.getElementById("input")
     let score = 0
-    let secondsRemaining = 20
+    let timeLimit = 20
+    let secondsRemaining = timeLimit
     document.getElementById("score").innerText = score
-    document.getElementById("time-limit").innerText = secondsRemaining
-    document.getElementById("time-left").innerText = secondsRemaining
+    document.getElementById("time-limit").innerText = timeLimit
+    document.getElementById("time-left").innerText = timeLimit
 
     input.addEventListener("input", () => {
         console.log("changed")
@@ -32,7 +33,7 @@ $(document).ready(function() {
             if (secondsRemaining > 0) {
                 score++
                 document.getElementById("score").innerText = score
-                secondsRemaining = 21
+                secondsRemaining = timeLimit + 1
                 getNextQuote()
             }
         }
@@ -61,7 +62,7 @@ $(document).ready(function() {
         if (secondsRemaining > 0) {
             secondsRemaining--
         } else {
-            document.getElementById("times-up").innerText = "Time's Up!"
+            document.getElementById("game-over").innerText = "Game Over!"
         }
         document.getElementById("time-left").innerText = secondsRemaining
     }
