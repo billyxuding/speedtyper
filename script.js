@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    const randomQuotesURL = "http://api.quotable.io/random"
     const phrase = document.getElementById("phrase")
     const input = document.getElementById("input")
     let score = 0
@@ -42,7 +41,7 @@ $(document).ready(function() {
     document.getElementById("new-game").onclick = function() {location.reload()}
 
     function getRandomQuote() {
-        return fetch(randomQuotesURL)
+        return fetch("http://api.quotable.io/random")
             .then(response => response.json())
             .then(data => data.content)
     }
