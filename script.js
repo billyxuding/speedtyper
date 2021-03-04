@@ -13,8 +13,9 @@ $(function() {
     async function getNextQuote() {
         const quote = await getRandomQuote()
         $("#phrase").html(null)
-        quote.split("").forEach(character => { // refactor to jquery
-            const characterSpan = document.createElement("span") // refactor to jquery
+        // refactor below to jquery
+        quote.split("").forEach(character => {
+            const characterSpan = document.createElement("span")
             $(characterSpan).text(character)
             $("#phrase").append(characterSpan)
         })
@@ -35,10 +36,9 @@ $(function() {
     setInterval(countdown, 1000)
 
     $("#input").on("input", function() {
-        const inputCharArray = $("#input").val().split("")
         let typedCorrect = true
         $("#phrase span").each(function(index) {
-            const character = inputCharArray[index]
+            const character = $("#input").val().split("")[index]
             if (character == null) {
                 $(this).removeClass("text-danger")
                 $(this).removeClass("text-success")
