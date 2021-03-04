@@ -3,13 +3,11 @@ $(function() {
     let TIME_LIMIT = 15 // change this variable to change difficulty
     let SECONDS_REMAINING = TIME_LIMIT
     let SCORE = 0
-    $(".time-limit").text(TIME_LIMIT)
-    $("#time-left").text(TIME_LIMIT)
 
     function getRandomQuote() {
         return fetch("http://api.quotable.io/random")
-            .then(response => response.json())
-            .then(data => data.content)
+        .then(response => response.json())
+        .then(data => data.content)
     }
 
     async function getNextQuote() {
@@ -23,6 +21,7 @@ $(function() {
         })
         $("#input").val(null)
         $("#score").text(SCORE)
+        SECONDS_REMAINING = TIME_LIMIT + 1
     }
 
     function countdown() {
@@ -34,6 +33,7 @@ $(function() {
         $("#time-left").text(SECONDS_REMAINING)
     }
 
+    $(".time-limit").text(TIME_LIMIT)
     getNextQuote()
     setInterval(countdown, 1000)
 
@@ -55,14 +55,12 @@ $(function() {
             }
         })
         if (typedCorrect && SECONDS_REMAINING > 0) {
-            SECONDS_REMAINING = TIME_LIMIT + 1
             SCORE++
             getNextQuote()
         }
     })
 
     $("#new-game").click(function() {
-        SECONDS_REMAINING = TIME_LIMIT + 1
         SCORE = 0
         getNextQuote()
         $("#input").focus()
