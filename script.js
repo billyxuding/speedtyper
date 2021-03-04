@@ -5,7 +5,7 @@ $(function() {
     let secondsRemaining = 20
     $("#time-limit").text(secondsRemaining)
     $("#time-left").text(secondsRemaining)
-    
+
     input.addEventListener("input", () => {
         const phraseCharArray = phrase.querySelectorAll("span")
         const inputCharArray = input.value.split("")
@@ -59,16 +59,16 @@ $(function() {
         input.value = null
         $("#score").text(score)
     }
-    
+
     function countdown() {
         if (secondsRemaining > 0) {
             secondsRemaining--
         } else {
-            document.getElementById("game-over").innerText = "Game Over!"
+            $("#game-over").text("Game Over!")
         }
-        document.getElementById("time-left").innerText = secondsRemaining
+        $("#time-left").text(secondsRemaining)
     }
-    
+
     getNextQuote()
     setInterval(countdown, 1000)
 })
