@@ -18,13 +18,12 @@ $(function() {
         quote.split("").forEach(character => {
             const characterSpan = document.createElement("span")
             $(characterSpan).text(character)
-            // phrase.appendChild(characterSpan)
             $(phrase).append(characterSpan)
         })
-        input.value = null
+        $("#input").val(null)
         $("#score").text(score)
     }
-    
+
     function countdown() {
         if (secondsRemaining > 0) {
             secondsRemaining--
@@ -37,9 +36,9 @@ $(function() {
     getNextQuote()
     setInterval(countdown, 1000)
 
-    input.addEventListener("input", () => {
+    $("#input").on("input", function() {
         const phraseCharArray = phrase.querySelectorAll("span")
-        const inputCharArray = input.value.split("")
+        const inputCharArray = $("#input").val().split("")
         let typedCorrect = true
         phraseCharArray.forEach((characterSpan, index) => {
             const character = inputCharArray[index]
