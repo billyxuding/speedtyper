@@ -1,7 +1,9 @@
+// script gets called after document has loaded
 $(function() {
-    let secondsRemaining = 20
-    $(".time-limit").text(secondsRemaining)
-    $("#time-left").text(secondsRemaining)
+    let timeLimit = 20 // change this variable to change difficulty
+    let secondsRemaining = timeLimit
+    $(".time-limit").text(timeLimit)
+    $("#time-left").text(timeLimit)
     let score = 0
 
     function getRandomQuote() {
@@ -53,14 +55,14 @@ $(function() {
             }
         })
         if (typedCorrect && secondsRemaining > 0) {
-            secondsRemaining = 21
+            secondsRemaining = timeLimit + 1
             score++
             getNextQuote()
         }
     })
 
     $("#new-game").click(function() {
-        secondsRemaining = 21
+        secondsRemaining = timeLimit + 1
         score = 0
         getNextQuote()
         $("#input").focus()
