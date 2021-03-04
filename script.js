@@ -3,7 +3,6 @@ $(function() {
     $(".time-limit").text(secondsRemaining)
     $("#time-left").text(secondsRemaining)
     let score = 0
-    const phrase = document.getElementById("phrase") // refactor and remove
 
     function getRandomQuote() {
         return fetch("http://api.quotable.io/random")
@@ -53,12 +52,10 @@ $(function() {
                 typedCorrect = false
             }
         })
-        if (typedCorrect) {
-            if (secondsRemaining > 0) {
-                secondsRemaining = 21
-                score++
-                getNextQuote()
-            }
+        if (typedCorrect && secondsRemaining > 0) {
+            secondsRemaining = 21
+            score++
+            getNextQuote()
         }
     })
 
