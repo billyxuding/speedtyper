@@ -1,4 +1,5 @@
-$(document).ready(function() {
+// calls function after document has loaded
+$(function() {
     const phrase = document.getElementById("phrase")
     const input = document.getElementById("input")
     let score = 0
@@ -9,7 +10,6 @@ $(document).ready(function() {
     document.getElementById("time-left").innerText = timeLimit
 
     input.addEventListener("input", () => {
-        console.log("changed")
         const phraseCharArray = phrase.querySelectorAll("span")
         const inputCharArray = input.value.split("")
         let typedCorrect = true
