@@ -38,6 +38,7 @@ $(function() {
 
     $("#new-game").click(function() {
         getNextQuote()
+        $("#input").focus()
         $("#game-over").text(null)
         secondsRemaining = 21
         score = 0
@@ -55,7 +56,7 @@ $(function() {
         phrase.innerHTML = ""
         quote.split("").forEach(character => {
             const characterSpan = document.createElement("span")
-            characterSpan.innerText = character
+            $(characterSpan).text(character)
             phrase.appendChild(characterSpan)
         })
         input.value = null
