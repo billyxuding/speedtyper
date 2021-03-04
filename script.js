@@ -16,12 +16,14 @@ $(function() {
         const quote = await getRandomQuote()
         const arrayOfCharacters = quote.split("")
         $("#phrase").html(null)
+        $("#message").text(null)
         $(arrayOfCharacters).each(function(index) { // makes each character its own span
             const characterSpan = document.createElement("span")
             $(characterSpan).text(arrayOfCharacters[index])
             $("#phrase").append(characterSpan)
         })
         $("#input").val(null)
+        $("#input").focus()
         $("#score").text(SCORE)
         SECONDS_REMAINING = TIME_LIMIT + 1
     }
@@ -65,7 +67,5 @@ $(function() {
     $("#new-game").click(function() {
         SCORE = 0
         getNextQuote()
-        $("#input").focus()
-        $("#message").text(null)
     })
 })
