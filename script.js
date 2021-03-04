@@ -3,7 +3,7 @@ $(document).ready(function() {
     const phrase = document.getElementById("phrase")
     const input = document.getElementById("input")
     let score = 0
-    let secondsRemaining = 60
+    let secondsRemaining = 20
     document.getElementById("score").innerText = score
     document.getElementById("time-limit").innerText = secondsRemaining
     document.getElementById("time-left").innerText = secondsRemaining
@@ -32,6 +32,7 @@ $(document).ready(function() {
             if (secondsRemaining > 0) {
                 score++
                 document.getElementById("score").innerText = score
+                secondsRemaining = 21
                 getNextQuote()
             }
         }
@@ -54,9 +55,8 @@ $(document).ready(function() {
             phrase.appendChild(characterSpan)
         })
         input.value = null
-        setInterval(countdown, 1000)
     }
-
+    
     function countdown() {
         if (secondsRemaining > 0) {
             secondsRemaining--
@@ -65,6 +65,7 @@ $(document).ready(function() {
         }
         document.getElementById("time-left").innerText = secondsRemaining
     }
-
+    
     getNextQuote()
+    setInterval(countdown, 1000)
 })
