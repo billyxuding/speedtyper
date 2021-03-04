@@ -1,11 +1,11 @@
-// calls function after document has loaded
 $(function() {
     const phrase = document.getElementById("phrase")
     const input = document.getElementById("input")
     let score = 0
     let timeLimit = 20
     let secondsRemaining = timeLimit
-    document.getElementById("score").innerText = score
+    // document.getElementById("score").innerText = score
+    $("#score").text(score)
     document.getElementById("time-limit").innerText = timeLimit
     document.getElementById("time-left").innerText = timeLimit
 
