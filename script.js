@@ -3,7 +3,7 @@ $(function() {
     $(".time-limit").text(secondsRemaining)
     $("#time-left").text(secondsRemaining)
     let score = 0
-    const phrase = document.getElementById("phrase")
+    const phrase = document.getElementById("phrase") // refactor and remove
 
     function getRandomQuote() {
         return fetch("http://api.quotable.io/random")
@@ -13,11 +13,11 @@ $(function() {
 
     async function getNextQuote() {
         const quote = await getRandomQuote()
-        $(phrase).html(null)
-        quote.split("").forEach(character => {
-            const characterSpan = document.createElement("span")
+        $("#phrase").html(null)
+        quote.split("").forEach(character => { // refactor to jquery
+            const characterSpan = document.createElement("span") // refactor to jquery
             $(characterSpan).text(character)
-            $(phrase).append(characterSpan)
+            $("#phrase").append(characterSpan)
         })
         $("#input").val(null)
         $("#score").text(score)
@@ -36,21 +36,20 @@ $(function() {
     setInterval(countdown, 1000)
 
     $("#input").on("input", function() {
-        const phraseCharArray = phrase.querySelectorAll("span")
         const inputCharArray = $("#input").val().split("")
         let typedCorrect = true
-        phraseCharArray.forEach((characterSpan, index) => {
+        $("#phrase span").each(function(index) {
             const character = inputCharArray[index]
             if (character == null) {
-                $(characterSpan).removeClass("text-danger")
-                $(characterSpan).removeClass("text-success")
+                $(this).removeClass("text-danger")
+                $(this).removeClass("text-success")
                 typedCorrect = false
-            } else if (character === $(characterSpan).text()) {
-                $(characterSpan).addClass("text-success")
-                $(characterSpan).removeClass("text-danger")
+            } else if (character === $(this).text()) {
+                $(this).addClass("text-success")
+                $(this).removeClass("text-danger")
             } else {
-                $(characterSpan).addClass("text-danger")
-                $(characterSpan).removeClass("text-success")
+                $(this).addClass("text-danger")
+                $(this).removeClass("text-success")
                 typedCorrect = false
             }
         })
