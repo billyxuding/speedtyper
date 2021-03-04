@@ -1,15 +1,18 @@
 // script gets called after document has loaded
 $(function() {
-    let TIME_LIMIT = 15 // change this variable to change difficulty
+    let TIME_LIMIT = 15 // seconds per phrase
     let SECONDS_REMAINING = TIME_LIMIT
     let SCORE = 0
 
+    // gets a quote from an API that produces random quotes
     function getRandomQuote() {
         return fetch("http://api.quotable.io/random")
         .then(response => response.json())
         .then(data => data.content)
     }
 
+    // grabs the quote and displays it
+    // makes each character its own span
     async function getNextQuote() {
         const quote = await getRandomQuote()
         $("#phrase").html(null)
