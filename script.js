@@ -31,18 +31,17 @@ $(function() {
                 score++
                 $("#score").text(score)
                 secondsRemaining = 21
-                input.value = null
                 getNextQuote()
             }
         }
     })
 
     $("#new-game").click(function() {
-        $("#game-over").text("")
+        getNextQuote()
+        $("#game-over").text(null)
+        secondsRemaining = 21
         score = 0
         $("#score").text(score)
-        getNextQuote()
-        secondsRemaining = 21
     })
 
     function getRandomQuote() {
@@ -59,6 +58,7 @@ $(function() {
             characterSpan.innerText = character
             phrase.appendChild(characterSpan)
         })
+        input.value = null
     }
     
     function countdown() {
