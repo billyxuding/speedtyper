@@ -31,6 +31,7 @@ $(function() {
                 score++
                 $("#score").text(score)
                 secondsRemaining = 21
+                input.value = null
                 getNextQuote()
             }
         }
@@ -58,7 +59,6 @@ $(function() {
             characterSpan.innerText = character
             phrase.appendChild(characterSpan)
         })
-        input.value = null
     }
     
     function countdown() {
