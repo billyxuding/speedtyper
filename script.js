@@ -4,7 +4,6 @@ $(function() {
     $("#time-left").text(secondsRemaining)
     let score = 0
     const phrase = document.getElementById("phrase")
-    const input = document.getElementById("input")
 
     function getRandomQuote() {
         return fetch("http://api.quotable.io/random")
@@ -28,7 +27,7 @@ $(function() {
         if (secondsRemaining > 0) {
             secondsRemaining--
         } else {
-            $("#game-over").text("Game Over!")
+            $("#message").text("Game Over!")
         }
         $("#time-left").text(secondsRemaining)
     }
@@ -69,6 +68,6 @@ $(function() {
         score = 0
         getNextQuote()
         $("#input").focus()
-        $("#game-over").text(null)
+        $("#message").text(null)
     })
 })
