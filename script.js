@@ -18,9 +18,7 @@ $(function() {
         $("#phrase").html(null)
         $("#message").text(null)
         $(arrayOfCharacters).each(function(index) { // makes each character its own span
-            const characterSpan = document.createElement("span")
-            $(characterSpan).text(arrayOfCharacters[index])
-            $("#phrase").append(characterSpan)
+            $("#phrase").append("<span>" + arrayOfCharacters[index] + "</span>")
         })
         $("#input").val(null)
         $("#input").focus()
