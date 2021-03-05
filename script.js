@@ -16,6 +16,7 @@ async function getNextQuote() {
     $("#phrase").html(null)
     $("#message").text(null)
     for (let i = 0; i < arrayOfQuoteCharacters.length; i++) {
+        // each character in the quote get put into its own span and displayed
         $("#phrase").append("<span>" + arrayOfQuoteCharacters[i] + "</span>")
     }
     $("#input").val(null)
