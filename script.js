@@ -14,12 +14,12 @@ $(function() {
     // grabs the quote and displays it
     async function getNextQuote() {
         const quote = await getRandomQuote()
-        const arrayOfCharacters = quote.split("")
+        const arrayOfQuoteCharacters = quote.split("")
         $("#phrase").html(null)
         $("#message").text(null)
-        $(arrayOfCharacters).each(function(index) { // makes each character its own span
-            $("#phrase").append("<span>" + arrayOfCharacters[index] + "</span>")
-        })
+        for (let i = 0; i < arrayOfQuoteCharacters.length; i++) {
+            $("#phrase").append("<span>" + arrayOfQuoteCharacters[i] + "</span>")
+        }
         $("#input").val(null)
         $("#input").focus()
         $("#score").text(SCORE)
@@ -42,12 +42,12 @@ $(function() {
     $("#input").on("input", function() {
         let typedCorrect = true
         $("#phrase span").each(function(index) {
-            const character = $("#input").val().split("")[index]
-            if (character == null) {
+            const arrayOfInputCharacters = $("#input").val().split("")
+            if (arrayOfInputCharacters[index] == null) {
                 $(this).removeClass("text-danger")
                 $(this).removeClass("text-success")
                 typedCorrect = false
-            } else if (character === $(this).text()) {
+            } else if (arrayOfInputCharacters[index] === $(this).text()) {
                 $(this).addClass("text-success")
                 $(this).removeClass("text-danger")
             } else {
