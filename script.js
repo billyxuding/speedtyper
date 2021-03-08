@@ -4,7 +4,7 @@ let SCORE = 0
 
 // gets a quote from an API that produces random quotes
 function getRandomQuote() {
-    return fetch("http://api.quotable.io/random")
+    return fetch("https://api.quotable.io/random")
     .then(response => response.json())
     .then(data => data.content)
 }
