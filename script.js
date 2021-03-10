@@ -4,12 +4,11 @@ let SCORE = 0
 
 function getQuote() {
     $.get("https://api.quotable.io/random", function(response) {
-        const quote = response.content
-        const arrayOfQuoteCharacters = quote.split("")
-        $("#phrase").html(null)
+        const quoteCharacters = response.content.split("")
+        $("#quote").html(null)
         $("#message").text(null)
-        for (let i = 0; i < arrayOfQuoteCharacters.length; i++) {
-            $("#phrase").append("<span>" + arrayOfQuoteCharacters[i] + "</span>")
+        for (let i = 0; i < quoteCharacters.length; i++) {
+            $("#quote").append("<span>" + quoteCharacters[i] + "</span>")
         }
         $("#input").val(null)
         $("#input").focus()
@@ -33,18 +32,18 @@ setInterval(countdown, 1000)
 
 $("#input").on("input", function() {
     let typedCorrect = true
-    $("#phrase span").each(function(index) {
-        const arrayOfInputCharacters = $("#input").val().split("")
-        if (arrayOfInputCharacters[index] == null) {
+    $("#quote span").each(function(index) {
+        const inputCharacters = $("#input").val().split("")
+        if (inputCharacters[index] == null) {
             $(this).removeClass("text-danger")
             $(this).removeClass("text-success")
             typedCorrect = false
-        } else if (arrayOfInputCharacters[index] === $(this).text()) {
-            $(this).addClass("text-success")
+        } else if (inputCharacters[index] === $(this).text()) {
             $(this).removeClass("text-danger")
+            $(this).addClass("text-success")
         } else {
-            $(this).addClass("text-danger")
             $(this).removeClass("text-success")
+            $(this).addClass("text-danger")
             typedCorrect = false
         }
     })
