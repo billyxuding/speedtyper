@@ -1,28 +1,21 @@
-let TIME_LIMIT = 15 // seconds per phrase
+let TIME_LIMIT = 15
 let SECONDS_REMAINING = TIME_LIMIT
 let SCORE = 0
 
-// gets a quote from an API that produces random quotes
-function getRandomQuote() {
-    return fetch("https://api.quotable.io/random")
-    .then(response => response.json())
-    .then(data => data.content)
-}
-
-// grabs the quote and displays it
-async function getNextQuote() {
-    const quote = await getRandomQuote()
-    const arrayOfQuoteCharacters = quote.split("")
-    $("#phrase").html(null)
-    $("#message").text(null)
-    for (let i = 0; i < arrayOfQuoteCharacters.length; i++) {
-        // each character in the quote get put into its own span and displayed
-        $("#phrase").append("<span>" + arrayOfQuoteCharacters[i] + "</span>")
-    }
-    $("#input").val(null)
-    $("#input").focus()
-    $("#score").text(SCORE)
-    SECONDS_REMAINING = TIME_LIMIT + 1
+function getQuote() {
+    $.get("https://api.quotable.io/random", function(response) {
+        const quote = response.content
+        const arrayOfQuoteCharacters = quote.split("")
+        $("#phrase").html(null)
+        $("#message").text(null)
+        for (let i = 0; i < arrayOfQuoteCharacters.length; i++) {
+            $("#phrase").append("<span>" + arrayOfQuoteCharacters[i] + "</span>")
+        }
+        $("#input").val(null)
+        $("#input").focus()
+        $("#score").text(SCORE)
+        SECONDS_REMAINING = TIME_LIMIT + 1
+    }, "json")
 }
 
 function countdown() {
@@ -35,7 +28,7 @@ function countdown() {
 }
 
 $(".time-limit").text(TIME_LIMIT)
-getNextQuote()
+getQuote()
 setInterval(countdown, 1000)
 
 $("#input").on("input", function() {
@@ -57,11 +50,11 @@ $("#input").on("input", function() {
     })
     if (typedCorrect && SECONDS_REMAINING > 0) {
         SCORE++
-        getNextQuote()
+        getQuote()
     }
 })
 
 $("#new-game").click(function() {
     SCORE = 0
-    getNextQuote()
+    getQuote()
 })
