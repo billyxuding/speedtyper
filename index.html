@@ -23,39 +23,43 @@
 <body class="bg-dark text-white text-center">
     <header class="bg-secondary p-3">
         <h1>
-            Speed Typer
+            <span class="d-block">Speed Typer</span>
             <span class="d-block fs-6 fw-light">by Billy Ding</span>
         </h1>
     </header>
 
     <main class="container mt-5">
         <!-- phrase to type -->
-        <h2>Type the phrase below within <span class="time-limit"></span> seconds</h2>
-        <h3 class="mt-5 w-50 mx-auto" id="quote"></h3>
+        <h2 class="fw-light">Type the phrase below within <span class="time-limit"></span> seconds</h2>
+        <h3 class="mt-5 w-50 mx-auto fw-light" id="quote"></h3>
 
         <!-- input box -->
         <textarea class="w-50" id="input" rows="3" placeholder="start typing..."
         autocapitalize="false" autocomplete="false" autocorrect="false" spellcheck="false"></textarea>
 
         <!-- timer and score -->
-        <h3 class="text-danger mt-3" id="message"></h3>
+        <h3 class="mt-3 text-danger fw-light" id="message"></h3>
         <div class="row mt-3">
-            <div class="col"><h3>Time Left: <span id="time-left"></span> seconds</h3></div>
-            <div class="col"><h3>Score: <span id="score"></span></h3></div>
+            <div class="col">
+                <h3 class="fw-light">Time Left: <span id="time-left"></span> seconds</h3>
+            </div>
+            <div class="col">
+                <h3 class="fw-light">Score: <span id="score"></span></h3>
+            </div>
         </div>
 
         <!-- new game -->
         <button class="btn btn-primary" id="new-game">New Game</button>
 
         <!-- instructions -->
-        <p class="w-50 mx-auto bg-secondary p-3 mt-5 rounded-3">
+        <p class="w-50 mx-auto mt-5 p-3 bg-secondary rounded-3 fw-light">
             Instructions:<br/>
             Type the given phrase before time runs out to move on to the next phrase<br/>
             and get a new <span class="time-limit"></span> seconds<br/>
             Click the New Game button to play again
         </p>
     </main>
-    <footer class="pt-5 fs-6 fw-lighter text-secondary">
+    <footer class="mt-5 fs-6 fw-lighter text-secondary">
         <span class="d-block">
             Quotes provided by <a href="https://github.com/lukePeavey/quotable">Quotable</a>
         </span>
