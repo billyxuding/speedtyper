@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- link to Bootstrap CSS -->
+    <!-- link to Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
     rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
     crossorigin="anonymous">
 
-    <!-- link to jQuery -->
+    <!-- link to jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- link to external JavaScript file -->
@@ -22,7 +22,10 @@
 </head>
 <body class="bg-dark text-white text-center">
     <header class="bg-secondary p-3">
-        <h1>Speed Typer</h1>
+        <h1>
+            Speed Typer
+            <span class="d-block fs-6">by Billy Ding</span>
+        </h1>
     </header>
 
     <main class="container mt-5">
@@ -46,11 +49,16 @@
 
         <!-- instructions -->
         <p class="w-50 mx-auto bg-secondary p-3 mt-5 rounded-3">
-            Instructions:<br>
-            Type the given phrase before time runs out to move on to the next phrase<br>
-            and get a new <span class="time-limit"></span> seconds<br>
+            Instructions:<br/>
+            Type the given phrase before time runs out to move on to the next phrase<br/>
+            and get a new <span class="time-limit"></span> seconds<br/>
             Click the New Game button to play again
         </p>
     </main>
+    <footer class="pt-5">
+        <span class="fs-6 fw-lighter text-secondary">
+            Contribute to this site on <a href="https://github.com/billyxuding/SpeedTyper">GitHub</a>
+        </span>
+    </footer>
 </body>
 </html>
