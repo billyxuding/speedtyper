@@ -7,8 +7,8 @@ function getQuote() {
         const quoteCharacters = response.content.split("")
         $("#quote").html(null)
         $("#message").text(null)
-        for (let i = 0; i < quoteCharacters.length; i++) {
-            $("#quote").append("<span>" + quoteCharacters[i] + "</span>")
+        for (character of quoteCharacters) {
+            $("#quote").append("<span>" + character + "</span>");
         }
         $("#input").val(null)
         $("#input").focus()
@@ -34,7 +34,7 @@ $("#input").on("input", function() {
     let typedCorrect = true
     $("#quote span").each(function(index) {
         const inputCharacters = $("#input").val().split("")
-        if (inputCharacters[index] == null) {
+        if (inputCharacters[index] == undefined) {
             $(this).removeClass("text-danger")
             $(this).removeClass("text-success")
             typedCorrect = false
