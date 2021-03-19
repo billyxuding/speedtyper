@@ -16,17 +16,20 @@
     <title>Speed Typer</title>
 </head>
 <body>
-    <div class="vh-100 bg-dark text-white text-center">
+    <div class="h-100 bg-dark text-white text-center">
         <header class="bg-secondary pt-3 pb-1">
-            <h1>
-                Speed Typer<br/>
-                <span class="d-block fs-6 fw-light">by Billy Ding</span>
-            </h1>
+            <h1>Speed Typer<br/><span class="d-block fs-6 fw-light">by Billy Ding</span></h1>
         </header>
 
         <main class="container mt-5">
             <h2 class="fw-light">Type the phrase below within <span class="time-limit"></span> seconds</h2>
-            <h3 class="mt-5 w-50 mx-auto fw-light" id="quote"></h3>
+            <div>
+                <h3 class="fw-light fs-5">Change Time Limit:</h3>
+                <button class="rounded-3">10 seconds</button>
+                <button class="rounded-3">15 seconds</button>
+                <button class="rounded-3">20 seconds</button>
+            </div>
+            <p class="mt-5 w-50 mx-auto fw-light fs-3" id="quote"></p>
 
             <textarea class="w-50" id="input" rows="3" placeholder="start typing..."
             autocapitalize="false" autocomplete="false" autocorrect="false" spellcheck="false"></textarea>
@@ -51,7 +54,7 @@
             </p>
         </main>
 
-        <footer class="mt-5 fs-6 fw-lighter text-secondary">
+        <footer class="p-5 fs-6 fw-lighter text-secondary">
             <span class="d-block">
                 Quotes provided by <a href="https://github.com/lukePeavey/quotable">Quotable</a>
             </span>
