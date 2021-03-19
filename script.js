@@ -40,10 +40,15 @@ $("#input").on("input", () => {
             typedCorrect = false;
         } else if (inputCharacters[index] === $(span).text()) {
             $(span).removeClass("text-danger");
+            $(span).removeClass("border-bottom border-danger border-3");
             $(span).addClass("text-success");
-        } else {
-            $(span).removeClass("text-success");
-            $(span).addClass("text-danger");
+        } else { // characters don't match
+            if ($(span).text() === " ") {
+                $(span).addClass("border-bottom border-danger border-3");
+            } else {
+                $(span).removeClass("text-success");
+                $(span).addClass("text-danger");
+            }
             typedCorrect = false;
         }
     });
