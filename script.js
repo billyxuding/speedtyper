@@ -14,6 +14,7 @@ const getQuote = () => {
         $("#input").focus();
         $("#score").text(SCORE);
         SECONDS_REMAINING = TIME_LIMIT + 1;
+        $("#time-limit").text(TIME_LIMIT);
     }, "json");
 }
 
@@ -26,7 +27,6 @@ const countdown = () => {
     $("#time-left").text(SECONDS_REMAINING);
 }
 
-$("#time-limit").text(TIME_LIMIT);
 getQuote();
 setInterval(countdown, 1000);
 
@@ -51,6 +51,23 @@ $("#input").on("input", () => {
         SCORE++;
         getQuote();
     }
+});
+
+const changeTimeLimit = numSeconds => {
+    TIME_LIMIT = numSeconds;
+    getQuote();
+}
+
+$("#10").click(() => {
+    changeTimeLimit(10);
+});
+
+$("#15").click(() => {
+    changeTimeLimit(15);
+});
+
+$("#20").click(() => {
+    changeTimeLimit(20);
 });
 
 $("#new-game").click(() => {
