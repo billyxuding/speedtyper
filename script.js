@@ -56,6 +56,7 @@ $("#input").on("input", () => {
 const changeTimeLimit = numSeconds => {
     TIME_LIMIT = numSeconds;
     getQuote();
+    $(`#${numSeconds}`).addClass("border-primary border-5");
 }
 
 $("#10").click(() => {
