@@ -1,4 +1,4 @@
-let TIME_LIMIT = 15;
+let TIME_LIMIT = 20;
 let SECONDS_REMAINING = TIME_LIMIT;
 let SCORE = 0;
 
@@ -26,7 +26,7 @@ function countdown() {
     $("#time-left").text(SECONDS_REMAINING);
 }
 
-$(".time-limit").text(TIME_LIMIT);
+$("#time-limit").text(TIME_LIMIT);
 getQuote();
 setInterval(countdown, 1000);
 
