@@ -15,20 +15,20 @@
     <link rel="shortcut icon" href="#">
     <title>Speed Typer</title>
 </head>
-<body>
-    <div class="h-100 bg-dark text-white text-center">
+<body class="bg-dark">
+    <div class="text-white text-center">
         <header class="bg-secondary pt-3 pb-1">
             <h1>Speed Typer<br/><span class="d-block fs-6 fw-light">by Billy Ding</span></h1>
         </header>
 
         <main class="container mt-5">
-            <h2 class="fw-light">Type the phrase below within <span class="time-limit"></span> seconds</h2>
             <div>
                 <h3 class="fw-light fs-5">Change Time Limit:</h3>
-                <button class="rounded-3">10 seconds</button>
-                <button class="rounded-3">15 seconds</button>
-                <button class="rounded-3">20 seconds</button>
+                <button class="btn btn-light p-1">10 seconds</button>
+                <button class="btn btn-light p-1">15 seconds</button>
+                <button class="btn btn-light p-1">20 seconds</button>
             </div>
+
             <p class="mt-5 w-50 mx-auto fw-light fs-3" id="quote"></p>
 
             <textarea class="w-50" id="input" rows="3" placeholder="start typing..."
@@ -49,7 +49,7 @@
             <p class="w-50 mx-auto mt-5 p-3 bg-secondary rounded-3 fw-light">
                 Instructions:<br/>
                 Type the given phrase before time runs out to move on to the next phrase<br/>
-                and get a new <span class="time-limit"></span> seconds<br/>
+                and get a new <span id="time-limit"></span> seconds<br/>
                 Click the New Game button to play again
             </p>
         </main>
