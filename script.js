@@ -2,8 +2,8 @@ let TIME_LIMIT = 20;
 let SECONDS_REMAINING = TIME_LIMIT;
 let SCORE = 0;
 
-function getQuote() {
-    $.get("https://api.quotable.io/random", function(response) {
+const getQuote = () => {
+    $.get("https://api.quotable.io/random", response => {
         const quoteCharacters = response.content.split("");
         $("#quote").html(null);
         $("#message").text(null);
@@ -17,7 +17,7 @@ function getQuote() {
     }, "json");
 }
 
-function countdown() {
+const countdown = () => {
     if (SECONDS_REMAINING > 0) {
         SECONDS_REMAINING--;
     } else {
@@ -30,7 +30,7 @@ $("#time-limit").text(TIME_LIMIT);
 getQuote();
 setInterval(countdown, 1000);
 
-$("#input").on("input", function() {
+$("#input").on("input", () => {
     let typedCorrect = true;
     $("#quote span").each(function(index) {
         const inputCharacters = $("#input").val().split("");
@@ -53,7 +53,7 @@ $("#input").on("input", function() {
     }
 });
 
-$("#new-game").click(function() {
+$("#new-game").click(() => {
     SCORE = 0;
     getQuote();
 });
