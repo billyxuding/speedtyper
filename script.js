@@ -60,7 +60,6 @@ $("#input").on("input", () => {
 
 const changeTimeLimit = numSeconds => {
     TIME_LIMIT = numSeconds;
-    getQuote();
     $("#10").removeClass("border-primary border-5");
     $("#15").removeClass("border-primary border-5");
     $("#20").removeClass("border-primary border-5");
