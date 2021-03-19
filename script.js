@@ -32,18 +32,18 @@ setInterval(countdown, 1000);
 
 $("#input").on("input", () => {
     let typedCorrect = true;
-    $("#quote span").each(function(index) {
+    $("#quote span").each((index, span) => {
         const inputCharacters = $("#input").val().split("");
         if (inputCharacters[index] == undefined) {
-            $(this).removeClass("text-danger");
-            $(this).removeClass("text-success");
+            $(span).removeClass("text-danger");
+            $(span).removeClass("text-success");
             typedCorrect = false;
-        } else if (inputCharacters[index] === $(this).text()) {
-            $(this).removeClass("text-danger");
-            $(this).addClass("text-success");
+        } else if (inputCharacters[index] === $(span).text()) {
+            $(span).removeClass("text-danger");
+            $(span).addClass("text-success");
         } else {
-            $(this).removeClass("text-success");
-            $(this).addClass("text-danger");
+            $(span).removeClass("text-success");
+            $(span).addClass("text-danger");
             typedCorrect = false;
         }
     });
