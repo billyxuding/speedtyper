@@ -2,6 +2,10 @@ let TIME_LIMIT = 20;
 let SECONDS_REMAINING = TIME_LIMIT;
 let SCORE = 0;
 
+/*
+Retrieves a random quote from Quotable API and displays each character
+on-screen in its own span
+*/
 const getQuote = () => {
     $.get("https://api.quotable.io/random", response => {
         const quoteCharacters = response.content.split("");
@@ -18,6 +22,10 @@ const getQuote = () => {
     }, "json");
 }
 
+/*
+Decrements the seconds remaining and displays a game over message and displays
+a game over message when time's up
+*/
 const countdown = () => {
     if (SECONDS_REMAINING > 0) {
         SECONDS_REMAINING--;
@@ -27,9 +35,16 @@ const countdown = () => {
     $("#time-left").text(SECONDS_REMAINING);
 }
 
+// Once the page loads/reloads, a quote gets retrieved and the timer starts
 getQuote();
 setInterval(countdown, 1000);
 
+/*
+Any time there is input in the text box, this will compare the character typed
+to the character at the same position in the quote and change its color accordingly.
+
+A new quote will be retrieved only if all the characters match.
+*/
 $("#input").on("input", () => {
     let typedCorrect = true;
     $("#quote span").each((index, span) => {
