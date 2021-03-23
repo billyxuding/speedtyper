@@ -2,10 +2,7 @@ let TIME_LIMIT = 20;
 let SECONDS_REMAINING = TIME_LIMIT;
 let SCORE = 0;
 
-/*
-Retrieves a random quote from Quotable API and displays each character
-on-screen in its own span
-*/
+// Retrieves a random quote from Quotable API and displays each character in its own span
 const getQuote = () => {
     $.get("https://api.quotable.io/random", response => {
         const quoteCharacters = response.content.split("");
@@ -22,10 +19,7 @@ const getQuote = () => {
     }, "json");
 }
 
-/*
-Decrements the seconds remaining and displays a game over message and displays
-a game over message when time's up
-*/
+// Decrements the seconds remaining and displays a game over message when time's up
 const countdown = () => {
     if (SECONDS_REMAINING > 0) {
         SECONDS_REMAINING--;
@@ -35,15 +29,15 @@ const countdown = () => {
     $("#time-left").text(SECONDS_REMAINING);
 }
 
-// Once the page loads/reloads, a quote gets retrieved and the timer starts
+// Retrieves a quote and starts the timer on page load/reload
 getQuote();
 setInterval(countdown, 1000);
 
 /*
-Any time there is input in the text box, this will compare the character typed
-to the character at the same position in the quote and change its color accordingly.
+Any time there is input in the text box, the character typed is compared to the character
+at the same position in the quote and its color will change accordingly.
 
-A new quote will be retrieved only if all the characters match.
+A new quote will be retrieved only if all the characters were typed correctly before time expired.
 */
 $("#input").on("input", () => {
     let typedCorrect = true;
@@ -74,6 +68,7 @@ $("#input").on("input", () => {
     }
 });
 
+// Changes number of seconds provided to type a quote
 const changeTimeLimit = numSeconds => {
     TIME_LIMIT = numSeconds;
     $("#10").removeClass("border-primary border-5");
@@ -94,6 +89,7 @@ $("#20").click(() => {
     changeTimeLimit(20);
 });
 
+// Starts a new game by resetting the score and getting a new quote
 $("#new-game").click(() => {
     SCORE = 0;
     getQuote();
