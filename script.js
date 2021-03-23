@@ -35,6 +35,7 @@ $("#input").on("input", () => {
     $("#quote span").each((index, span) => {
         const inputCharacters = $("#input").val().split("");
         if (inputCharacters[index] == undefined) {
+            $(span).removeClass("border-bottom border-danger border-3");
             $(span).removeClass("text-danger");
             $(span).removeClass("text-success");
             typedCorrect = false;
