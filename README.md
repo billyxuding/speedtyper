@@ -1,4 +1,4 @@
 # Speed Typer
-Speed Typer is a typing game where users type randomly generated phrases within a set time limit
+A typing game where you race against the clock to type out a continuous stream of famous quotes
 
-Play Speed Typer here: https://billyxuding.github.io/SpeedTyper/
+Play Speed Typer here: https://billyxuding.github.io/speedtyper/
