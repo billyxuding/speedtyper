@@ -5,3 +5,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --clr-dark-grey: hsl(0, 0%, 40%);
+  /* blue */
+  /* white */
+  /* red */
+}
+
+body {
+  background: var(--clr-dark-grey);
+}
